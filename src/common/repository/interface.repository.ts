@@ -1,5 +1,4 @@
-export abstract class IRepository<T>
-{
+export abstract class IRepository<T> {
     abstract findAll(): Promise<T[]>;
     abstract findById(id: number): Promise<T | null>;
     abstract create(item: T): Promise<T>;

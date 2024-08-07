@@ -1,10 +1,9 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('link')
-export class LinkEntity
-{
-    constructor(link: string){
-        this.link = link
+export class LinkEntity {
+    constructor(link: string) {
+        this.link = link;
     }
 
     @PrimaryGeneratedColumn()
@@ -13,7 +12,7 @@ export class LinkEntity
     @Column({
         type: 'varchar',
         name: 'link',
-        select: true
+        select: true,
     })
     link!: string;
 }

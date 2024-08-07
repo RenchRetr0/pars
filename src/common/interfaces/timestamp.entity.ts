@@ -3,4 +3,3 @@ export interface TimestampEntity {
     updatedAt?: Date;
     deleteAt?: Date;
 }
-  
