@@ -1,15 +1,15 @@
 import { Controller, Get, Inject, Param } from '@nestjs/common';
-import { ICreateLinkUseCase } from '@pars/domain/use-case/create-link';
+import { IStartParsUseCase } from '@pars/domain/use-case/start-pars';
 
 @Controller('pars')
 export class ParsController {
     constructor(
-        @Inject(ICreateLinkUseCase)
-        private readonly createLinkUseCase: ICreateLinkUseCase,
+        @Inject(IStartParsUseCase)
+        private readonly startParsUseCase: IStartParsUseCase,
     ) {}
 
     @Get(':chatId')
-    async getVipLinks(@Param('chatId') chatId: number): Promise<string[]> {
-        return this.createLinkUseCase.createLink(chatId);
+    async getVipLinks(@Param('chatId') chatId: number): Promise<void> {
+        await this.startParsUseCase.startParsing(chatId);
     }
 }

@@ -1,3 +1,5 @@
+import { MessageContext } from 'vk-io';
+
 export abstract class ICreateLinkUseCase {
-    abstract createLink(chatId: number): Promise<string[]>;
+    abstract createLink(message: MessageContext): Promise<void>;
 }
